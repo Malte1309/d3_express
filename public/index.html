@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>D3</title>
-  <!--<script src="/d3-v7.8.4/dist/d3.js"></script>-->
-  <script type="module" src="./javascripts/d3.js"></script>
-  <link rel="stylesheet" href="/stylesheets/style.css">
-
-
-
-
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D3</title>
+    <script type="module" src="./javascripts/d3.js"></script>
+    <link rel="stylesheet" href="/stylesheets/style.css">
 
 </head>
-<body>
-<h1>Canva</h1>
 
-<div class="canva"></div>
+<body onload="makeUpdate()">
+<h1>Canva</h1>
+<div class="canva">
+    <svg id="demo1" width="600" height="600" style="background: lightgrey"></svg>
+
+</div>
+
+<!-- ACHTUNG ohne type="module" für examples-list1.js, sonst SETZEN! -->
+<script src="javascripts/examples-list1.js"></script>
 </body>
-<script type="module" src="./javascripts/pie-chart.js"> </script>
-</html>
+
+

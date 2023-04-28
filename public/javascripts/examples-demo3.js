@@ -1,19 +1,19 @@
-d3.csv("../../data/examples-multiple.csv")
-    .then(function(data){
+d3.csv("../data/examples-multiple.csv")
+    .then(function (data) {
         var svg = d3.select("svg")
 
         var pxX = svg.attr("width")
         var pxY = svg.attr("height")
 
-        var makeScale = function(accessor, range){
+        var makeScale = function (accessor, range) {
             return d3.scaleLinear()
                 .domain(d3.extent(data, accessor))
                 .range(range).nice()
         }
 
-        var scX = makeScale( d => d["x"], [0, pxX])
-        var scY1 = makeScale( d => d["y1"], [pxY, 0])
-        var scY2 = makeScale( d => d["y2"], [pxY, 0])
+        var scX = makeScale(d => d["x"], [0, pxX])
+        var scY1 = makeScale(d => d["y1"], [pxY, 0])
+        var scY2 = makeScale(d => d["y2"], [pxY, 0])
 
         var drawData = function (g, accessor, curve) {
             //zeichnet Kreise
@@ -25,7 +25,7 @@ d3.csv("../../data/examples-multiple.csv")
 
             //zeichnet Linien
             var lnMkr = d3.line().curve(curve)
-                .x(d => scX(d["x"]) ).y(accessor) 
+                .x(d => scX(d["x"])).y(accessor)
 
             g.append("path").attr("fill", "none")
                 .attr("d", lnMkr(data))
@@ -54,5 +54,5 @@ d3.csv("../../data/examples-multiple.csv")
         svg.append("g").call(d3.axisTop(scX))
             .attr("transform", `translate(0, ${pxY})`)
 
-        
+
     })

@@ -1,4 +1,4 @@
-d3.csv("../../data/examples-multiple.csv")
+d3.csv("../data/examples-multiple.csv")
     .then(function (data) {
         var pxX = 600, pxY = 300
 

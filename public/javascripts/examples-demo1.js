@@ -1,5 +1,4 @@
-
-d3.csv("../../data/examples-simple.csv")
+d3.csv("../data/examples-simple.csv")
     .then(function (data) {
         d3.select("svg")
             .selectAll("circle")

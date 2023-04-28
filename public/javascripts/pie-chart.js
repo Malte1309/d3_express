@@ -1,29 +1,25 @@
-//import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 //Ab "Adding a Tooltip" wiederholen"
 
-const canvas = d3.select(".canva")
-
-
-const svg = canvas.append("svg")
+var svg = d3.select("svg")
     .attr('width', "700")
     .attr('height', "600")
-    .attr('style', "background-color: lightgrey")
+    .attr('style', "background-color: lightblue")
 
-const margin = {top: 20, right: 20, bottom: 70, left: 70}
-const graphWidth = 600 - margin.left - margin.right
-const graphHeight = 600 - margin.top - margin.bottom
+var margin = {top: 20, right: 20, bottom: 70, left: 70}
+var graphWidth = 600 - margin.left - margin.right
+var graphHeight = 600 - margin.top - margin.bottom
 
-const mainCanvas = svg.append("g") //create a group
+var mainCanvas = svg.append("g") //create a group
     .attr("width", graphWidth)
     .attr("height", graphHeight) //transform move things arround
     .attr("transform", `translate(${margin.left + 200}, ${margin.top + 200})`)
 //create pie
-const pie = d3.pie()
+var pie = d3.pie()
     .sort(null) //null -> unsorted
     .value(data => data.total) //totasl Value als Basis für den Winkel
 
 //Radius
-const arcPath = d3.arc()
+var arcPath = d3.arc()
     .outerRadius(190)
     .innerRadius(100)
 
@@ -39,12 +35,12 @@ const arcPath = d3.arc()
 //             })
 
 //define ordinale scale, color range
-const colorScale = d3.scaleOrdinal(d3["schemeSet3"])
+var colorScale = d3.scaleOrdinal(d3["schemeSet3"])
 
 
 //"Creating Pie Angles" 3:00 bei return auch weitere Verschachtelung/Manipulation möglich
 function getCSVData() {
-    d3.csv("./data/daca.csv", function(d) {
+    d3.csv("./data/daca.csv", function (d) {
         //console.log("Data", d)
         return d
     }).then(drawPieChart)
@@ -52,7 +48,7 @@ function getCSVData() {
 
 getCSVData()
 
-function drawPieChart(data){
+function drawPieChart(data) {
 
     //update color scale domain
     colorScale.domain(data.map(d => d.total))
