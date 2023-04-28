@@ -5,7 +5,7 @@
 //import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 //import d3 from "./d3";
 
-const canvas = d3.select('.canvas');
+const canvas = d3.select('.canva');
 
 let data = [{x:10, y:10}, {x:15, y:20}, {x:20, y:40},
     {x:25, y:7}, {x:30, y:10}]
