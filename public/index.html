@@ -3,21 +3,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>D3</title>
-    <script type="module" src="./javascripts/d3.js"></script>
+    <title>Startseite</title>
     <link rel="stylesheet" href="/stylesheets/style.css">
-
 </head>
 
 <body>
-<h1>Canva</h1>
-<div class="canva">
-    <svg id="demo1" width="600" height="600" style="background: lightgrey"></svg>
 
-</div>
+<form id="load-data" action="/show-graph.html"></form>
+<form id="login" action="/login.html"></form>
+<p>
+    <input type="submit" value="Login" form="login"><br>
+    <label for="url-src">URL:</label><input type="url" id="url-src" form="load-data" placeholder="Quelle der Daten"><br>
+    <label for="file-src">File:</label><input type="file" id="file-src" form="load-data" accept=".json,.csv,.tsv"><br>
+    <label for="text-src">Daten eingeben:</label><textarea id="text-src" form="load-data"></textarea><br>
+    <input type="submit" value="Daten laden" form="load-data">
+</p>
 
-<!-- ACHTUNG ohne type="module" für JS mit onload Funktionen, sonst SETZEN! -->
-<script type="module" src="javascripts/scale-graph.js"></script>
+
 </body>
 
 
