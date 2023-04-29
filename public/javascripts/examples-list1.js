@@ -77,7 +77,7 @@ function makeSort() {
             .datum("Lisa").text("Lisa")
     })
 
-    //sortieren beim Klick
+    //sortieren beim Klick ERROR
     ul.on("click", function () {
         ul.selectAll("li").sort((a, b) => (a < b ? 1 : b < a ? -1 : 0))
     })

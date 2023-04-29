@@ -16,7 +16,7 @@ var mainCanvas = svg.append("g") //create a group
 //create pie
 var pie = d3.pie()
     .sort(null) //null -> unsorted
-    .value(data => data.total) //totasl Value als Basis für den Winkel
+    .value(data => data.total) //total Value als Basis für den Winkel
 
 //Radius
 var arcPath = d3.arc()
@@ -40,7 +40,7 @@ var colorScale = d3.scaleOrdinal(d3["schemeSet3"])
 
 //"Creating Pie Angles" 3:00 bei return auch weitere Verschachtelung/Manipulation möglich
 function getCSVData() {
-    d3.csv("./data/daca.csv", function (d) {
+    d3.csv("../data/daca.csv", function (d) {
         //console.log("Data", d)
         return d
     }).then(drawPieChart)

@@ -21,7 +21,7 @@ let parseMonths = d3.timeParse("%B")
 
 var svg = d3.select("svg")
     .attr('width', "700")
-    .attr('height', "600")
+    .attr('height', "650")
     .attr('style', "background-color: lightblue")
 
 var margin = {top: 20, right: 20, bottom: 70, left: 70}
@@ -56,8 +56,8 @@ mainCanvas.append("path")
     .data([revenueData]) //Achtung Array [] nicht vergessen!
     .attr("class", "line")
     .attr("d", valueLine)
-// .attr("fill", "none")
-// .attr("stroke", "black")
+    .attr("fill", "none")
+    .attr("stroke", "black")
 
 
 mainCanvas.append("path")

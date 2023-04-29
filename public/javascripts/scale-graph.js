@@ -20,7 +20,7 @@ var xAxisGroup = graph.append("g")
     .attr("transform", `translate(0, ${graphHeight})`)
 var yAxisGroup = graph.append("g")
 
-d3.json("text.json")
+d3.json("../data/text.json")
     .then(data => {
         console.log(data)
         const scY = d3.scaleLinear()

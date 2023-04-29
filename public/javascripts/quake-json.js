@@ -18,6 +18,7 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_m
             .attr("cy", (d, i) => Math.floor(Math.random() * 2) * 100 + d.properties.mag)
             .attr("r", (d, i) => d.properties.mag * 3)
             .style("fill", d => d.properties.alert)
+            //ERROR
             .on("mouseover", function (d, i, n) {
                 d3.select(n[i])
                     .transition()
